@@ -1,5 +1,7 @@
 import { Player } from "../objects/Player"
 
+import star from "../assets/star.png"
+
 class GameScene extends Phaser.Scene {
   private player?: Player = undefined
   //   // private background: Phaser.GameObjects.TileSprite;
@@ -13,18 +15,20 @@ class GameScene extends Phaser.Scene {
   }
 
   init(): void {
-    this.load.image("cat", "./src/games/battle-lite/assets/cat.jpg")
+    this.load.image("star", "../assets/star.png")
   }
 
   create(): void {
-    this.add.rectangle(100, 100, 100, 100, 0xff00)
+    this.add.rectangle(100, 100, 100, 100, 0xff0000)
 
-    this.player = new Player({
-      scene: this,
-      x: Phaser.Math.RND.integerInRange(200, 500),
-      y: Phaser.Math.RND.integerInRange(200, 500),
-      key: "cat",
-    })
+    this.add.sprite(400, 300, "star")
+
+    // this.player = new Player({
+    //   scene: this,
+    //   x: Phaser.Math.RND.integerInRange(200, 500),
+    //   y: Phaser.Math.RND.integerInRange(200, 500),
+    //   key: "star",
+    // })
   }
 }
 

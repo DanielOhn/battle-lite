@@ -1,5 +1,4 @@
 import * as React from "react"
-// import Phaser from "phaser"
 
 import "../styles/App.css"
 import Game, { config } from "../games/battle-lite/Game"
