@@ -9,6 +9,12 @@ export const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   parent: "game-root",
   scene: [GameScene],
+  physics: {
+    default: "arcade",
+    arcade: {
+      debug: false,
+    },
+  },
 }
 
 class Game extends Phaser.Game {

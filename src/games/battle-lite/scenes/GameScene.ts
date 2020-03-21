@@ -1,7 +1,7 @@
 import { Player } from "../objects/Player"
 
 class GameScene extends Phaser.Scene {
-  //   private player: Player
+  private player?: Player = undefined
   //   // private background: Phaser.GameObjects.TileSprite;
   //   // private scoreText: Phaser.GameObjects.BitmapText;
   //   // private timer: Phaser.Time.TimerEvent;
@@ -12,23 +12,20 @@ class GameScene extends Phaser.Scene {
     })
   }
 
-  create(): void {
-    this.add.rectangle(100, 100, 100, 100, 0xff00)
+  init(): void {
+    this.load.image("cat", "./src/games/battle-lite/assets/cat.jpg")
   }
 
-  //     this.player = new Player({
-  //       scene: this,
-  //       x: 50,
-  //       y: 100,
-  //       key: "player",
-  //     })
-  //   }
+  create(): void {
+    this.add.rectangle(100, 100, 100, 100, 0xff00)
 
-  //   // init(): void {
-  //   //   this.registry.set("score", -1)
-  //   // }
-
-  //   create(): void {}
+    this.player = new Player({
+      scene: this,
+      x: Phaser.Math.RND.integerInRange(200, 500),
+      y: Phaser.Math.RND.integerInRange(200, 500),
+      key: "cat",
+    })
+  }
 }
 
 export default GameScene
