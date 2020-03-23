@@ -1,7 +1,5 @@
 import { Player } from "../objects/Player"
 
-import star from "../assets/star.png"
-
 class GameScene extends Phaser.Scene {
   private player?: Player = undefined
   //   // private background: Phaser.GameObjects.TileSprite;
@@ -12,16 +10,19 @@ class GameScene extends Phaser.Scene {
     super({
       key: "Game",
     })
+
+    console.log()
   }
 
-  init(): void {
-    this.load.image("star", "../assets/star.png")
+  preload(): void {
+    this.load.image("cat", "https://placekitten.com/50/50")
+    this.load.image("test", "src/games/battle-lite/assets/test.png")
+    this.add.rectangle(100, 100, 100, 100, 0xff0000)
   }
 
   create(): void {
-    this.add.rectangle(100, 100, 100, 100, 0xff0000)
-
-    this.add.sprite(400, 300, "star")
+    this.add.image(400, 300, "cat")
+    this.add.image(200, 500, "test")
 
     // this.player = new Player({
     //   scene: this,
